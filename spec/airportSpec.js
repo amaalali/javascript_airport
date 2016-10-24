@@ -7,6 +7,14 @@ describe("airport", function() {
 			expect(airport.land(plane)).toEqual("Plane landed")
 			expect(airport.landedPlanes.length).toBe(1)
 		});
+
+		it('instructs plane to', function() {
+			var airport = new Airport();
+			//var plane = new Plane();
+			while (airport.landedPlanes.length < 10) {
+				airport.land(new Plane() )};
+			expect(airport.land(new Plane())).toBe("Airport full")
+		});
 	});
 
 	describe('takeOff', function() {
@@ -19,5 +27,4 @@ describe("airport", function() {
 			expect(airport.landedPlanes.length).toBe(0)
 		});
 	});
-
 })
