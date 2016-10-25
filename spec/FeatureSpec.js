@@ -25,6 +25,14 @@ describe('Feature Test:', function(){
       plane.takeoff();
       expect(airport.planes()).not.toContain(plane);
     });
+
+    it('does not allow plane to land if hanger is at capacity', function() {
+      var i;
+      for( i = 0; i < airport._MAXIMUM_CAPACITY; i++) {
+          plane.land(airport);
+      }
+      expect(function() { plane.land(airport); }).toThrowError('Airport at maximum capacity');
+    });
   });
 
   describe('under stormy conditions', function(){
